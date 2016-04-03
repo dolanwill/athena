@@ -21,7 +21,7 @@ function makePie(data_json) {
 					color:"#"+((1<<24)*Math.random()|0).toString(16),
 					label: item.reason
 				});
-	}
+	});
 
 	var ctx = document.getElementById("denials-pie").getContext("2d");
 	window.myPie = new Chart(ctx).Pie(pieData);

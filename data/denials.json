@@ -1,13 +1,46 @@
-{
-    "Invalid Claim Data": 446,
-    "Billing Deadline Exceeded": 1431,
-    "Denied - not specific": 498,
-    "Service Frequency Limitation": 526,
-    "Referral/Authorization": 4577,
-    "Benefits Coverage": 609,
-    "Provider Information": 950,
-    "Patient Insurance Issues": 1516,
-    "Duplicate": 1,
-    "Medical Policy": 1534,
-    "Additional Documentation Required": 1048
-}
+[
+    {
+        "reason": "Referral/Authorization",
+        "number": 4577
+    },
+    {
+        "reason": "Medical Policy",
+        "number": 1534
+    },
+    {
+        "reason": "Patient Insurance Issues",
+        "number": 1516
+    },
+    {
+        "reason": "Billing Deadline Exceeded",
+        "number": 1431
+    },
+    {
+        "reason": "Additional Documentation Required",
+        "number": 1048
+    },
+    {
+        "reason": "Provider Information",
+        "number": 950
+    },
+    {
+        "reason": "Benefits Coverage",
+        "number": 609
+    },
+    {
+        "reason": "Service Frequency Limitation",
+        "number": 526
+    },
+    {
+        "reason": "Denied - not specific",
+        "number": 498
+    },
+    {
+        "reason": "Invalid Claim Data",
+        "number": 446
+    },
+    {
+        "reason": "Duplicate",
+        "number": 1
+    }
+]

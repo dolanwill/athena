@@ -6,44 +6,37 @@ $(document).ready(function(){
 		    url:"data/denials.json",
 		    cache:false,
 		    dataType:"json", 
-		}).done(makeGraph(denials_json)); 
+		}).done(function(denials_json) {
+	  			makeGraph(denials_json);
+			});
 });
 
-function makeGraph() {
+function makePie(data_json) {
+	var pieData = [];
+	var data_copy = data_json;
 
-	var pieData = [
-				{
-					value: 300,
-					color:"#F7464A",
-					highlight: "#FF5A5E",
-					label: "Red"
-				},
-				{
-					value: 50,
-					color: "#46BFBD",
-					highlight: "#5AD3D1",
-					label: "Green"
-				},
-				{
-					value: 100,
-					color: "#FDB45C",
-					highlight: "#FFC870",
-					label: "Yellow"
-				},
-				{
-					value: 40,
-					color: "#949FB1",
-					highlight: "#A8B3C5",
-					label: "Grey"
-				},
-				{
-					value: 120,
-					color: "#4D5360",
-					highlight: "#616774",
-					label: "Dark Grey"
-				}
+	data_json.forEach(function(item, index) {
+		pieData.push({
+					value: item.number,
+					color:"#"+((1<<24)*Math.random()|0).toString(16),
+					label: item.reason
+				});
+	}
 
-			];
 	var ctx = document.getElementById("denials-pie").getContext("2d");
 	window.myPie = new Chart(ctx).Pie(pieData);
+}
+
+function getTopN(arr, prop, n) {
+    // clone before sorting, to preserve the original array
+    var clone = arr.slice(0); 
+
+    // sort descending
+    clone.sort(function(x, y) {
+        if (x[prop] == y[prop]) return 0;
+        else if (parseInt(x[prop]) < parseInt(y[prop])) return 1;
+        else return -1;
+    });
+
+    return clone.slice(0, n || 1);
 }

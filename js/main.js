@@ -7,7 +7,7 @@ $(document).ready(function(){
 		    cache:false,
 		    dataType:"json", 
 		}).done(function(denials_json) {
-	  			makeGraph(denials_json);
+	  			makePie(denials_json);
 			});
 });
 

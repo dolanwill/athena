@@ -1,17 +1,18 @@
-$(document).ready(function(){
+<!doctype html>
+<html>
+	<head>
+		<title>Pie Chart</title>
+		<script src="../Chart.js"></script>
+	</head>
+	<body>
+		<div id="canvas-holder">
+			<canvas id="chart-area" width="300" height="300"/>
+		</div>
 
-	makeGraph();
-		$.ajax({
-			type:'get',
-		    url:"data/denials.json",
-		    cache:false,
-		    dataType:"json", 
-		}).done(makeGraph(denials_json)); 
-});
 
-function makeGraph() {
+	<script>
 
-	var pieData = [
+		var pieData = [
 				{
 					value: 300,
 					color:"#F7464A",
@@ -44,6 +45,14 @@ function makeGraph() {
 				}
 
 			];
-	var ctx = document.getElementById("denials-pie").getContext("2d");
-	window.myPie = new Chart(ctx).Pie(pieData);
-}
+
+			window.onload = function(){
+				var ctx = document.getElementById("chart-area").getContext("2d");
+				window.myPie = new Chart(ctx).Pie(pieData);
+			};
+
+
+
+	</script>
+	</body>
+</html>

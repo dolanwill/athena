@@ -1,14 +1,13 @@
 $(document).ready(function(){
 
-	makeGraph();
-		$.ajax({
-			type:'get',
-		    url:"data/denials.json",
-		    cache:false,
-		    dataType:"json", 
-		}).done(function(denials_json) {
-	  			makePie(denials_json);
-			});
+	$.ajax({
+		type:'get',
+	    url:"data/denials.json",
+	    cache:false,
+	    dataType:"json", 
+	}).done(function(denials_json) {
+  			makePie(denials_json);
+		});
 });
 
 function makePie(data_json) {

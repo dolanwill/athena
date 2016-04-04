@@ -20,7 +20,6 @@ $(document).ready(function(){
 
 function makePie(data_json) {
 	var pieData = [];
-	var data_copy = data_json;
 
 	data_json.forEach(function(item, index) {
 		pieData.push({
@@ -35,16 +34,15 @@ function makePie(data_json) {
 }
 
 function makeLine(data_json) {
-	var labels = [];
+	var date_labels = [];
 	var rates = [];
-	var data_copy = data_json;
 
 	data_json.forEach(function(item, index) {
 		rates.push(item.rejection_rate);
-		labels.push(item.month);
+		date_labels.push(item.month);
 	});
 	var graph_data = {
-	    labels = labels,	
+	    labels = date_labels,	
 	    datasets = [
 			{
 	            label: "Industry Average",

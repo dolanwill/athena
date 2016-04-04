@@ -42,8 +42,8 @@ function makeLine(data_json) {
 		date_labels.push(item.month);
 	});
 	var graph_data = {
-	    date_labels,	
-	    datasets = [
+	    labels: date_labels,	
+	    datasets: [
 			{
 	            label: "Industry Average",
 	            strokeColor: "rgba(220,220,220,1)",

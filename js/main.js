@@ -64,7 +64,7 @@ function makeLine(data_json) {
 	            pointHighlightStroke: "rgba(151,187,205,1)",
 	            data: rates
 	        }
-	    ]
+	    ]}
 
 	var ctx = document.getElementById("rejection_rates_time").getContext("2d");
 	var myLineChart = new Chart(ctx).Line(graph_data, graph_options);

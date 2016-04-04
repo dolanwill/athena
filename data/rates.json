@@ -1,0 +1,50 @@
+[
+    {
+        "rejection_rate": 0.09,
+        "month": "April"
+    },
+    {
+        "rejection_rate": 0.07,
+        "month": "August"
+    },
+    {
+        "rejection_rate": 0.05,
+        "month": "December"
+    },
+    {
+        "rejection_rate": 0.08,
+        "month": "February"
+    },
+    {
+        "rejection_rate": 0.1,
+        "month": "January"
+    },
+    {
+        "rejection_rate": 0.13,
+        "month": "July"
+    },
+    {
+        "rejection_rate": 0.09,
+        "month": "June"
+    },
+    {
+        "rejection_rate": 0.08,
+        "month": "March"
+    },
+    {
+        "rejection_rate": 0.08,
+        "month": "May"
+    },
+    {
+        "rejection_rate": 0.06,
+        "month": "November"
+    },
+    {
+        "rejection_rate": 0.05,
+        "month": "October"
+    },
+    {
+        "rejection_rate": 0.05,
+        "month": "September"
+    }
+]

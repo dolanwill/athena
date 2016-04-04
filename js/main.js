@@ -7,6 +7,14 @@ $(document).ready(function(){
 	    dataType:"json", 
 	}).done(function(denials_json) {
   			makePie(denials_json);
+		});	
+	$.ajax({
+		type:'get',
+	    url:"data/rates.json",
+	    cache:false,
+	    dataType:"json", 
+	}).done(function(rates_json) {
+  			makePie(rates_json);
 		});
 });
 
@@ -24,6 +32,43 @@ function makePie(data_json) {
 
 	var ctx = document.getElementById("denials-pie").getContext("2d");
 	window.myPie = new Chart(ctx).Pie(pieData);
+}
+
+function makeLine(data_json) {
+	var labels = [];
+	var rates = [];
+	var data_copy = data_json;
+
+	data_json.forEach(function(item, index) {
+		rates.push(item.rejection_rate);
+		labels.push(item.month);
+	});
+	var graph_data = {
+	    labels: labels,	datasets = [
+		{
+			{
+	            label: "Industry Average",
+	            strokeColor: "rgba(220,220,220,1)",
+	            pointColor: "rgba(220,220,220,1)",
+	            pointStrokeColor: "#fff",
+	            pointHighlightFill: "#fff",
+	            pointHighlightStroke: "rgba(220,220,220,1)",
+	            data: [0.05]
+	        },
+	        {
+	            label: "Insurance Company Rejection Rates",
+	            strokeColor: "rgba(151,187,205,1)",
+	            pointColor: "rgba(151,187,205,1)",
+	            pointStrokeColor: "#fff",
+	            pointHighlightFill: "#fff",
+	            pointHighlightStroke: "rgba(151,187,205,1)",
+	            data: rates
+	        }
+	    }]
+
+	var ctx = document.getElementById("rejection_rates_time").getContext("2d");
+	var myLineChart = new Chart(ctx).Line(graph_data, graph_options);
+
 }
 
 function getTopN(arr, prop, n) {

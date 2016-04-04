@@ -14,7 +14,7 @@ $(document).ready(function(){
 	    cache:false,
 	    dataType:"json", 
 	}).done(function(rates_json) {
-  			makePie(rates_json);
+  			makeLine(rates_json);
 		});
 });
 

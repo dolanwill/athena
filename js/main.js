@@ -41,6 +41,8 @@ function makeLine(data_json) {
 		rates.push(item.rejection_rate);
 		date_labels.push(item.month);
 	});
+	console.log(rates)
+	console.log(date_labels)
 	var graph_data = {
 	    labels: date_labels,	
 	    datasets: [
@@ -51,7 +53,7 @@ function makeLine(data_json) {
 	            pointStrokeColor: "#fff",
 	            pointHighlightFill: "#fff",
 	            pointHighlightStroke: "rgba(220,220,220,1)",
-	            data: [0.05]
+	            data: rates
 	        },
 	        {
 	            label: "Insurance Company Rejection Rates",
@@ -62,11 +64,10 @@ function makeLine(data_json) {
 	            pointHighlightStroke: "rgba(151,187,205,1)",
 	            data: rates
 	        }
-	    ]}
+	    ]};
 
 	var ctx = document.getElementById("rejection_rates_time").getContext("2d");
 	var myLineChart = new Chart(ctx).Line(graph_data, graph_options);
-
 }
 
 function getTopN(arr, prop, n) {

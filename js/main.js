@@ -42,7 +42,7 @@ function makeLine(data_json) {
 		date_labels.push(item.month);
 	});
 	var graph_data = {
-	    labels = date_labels,	
+	    date_labels,	
 	    datasets = [
 			{
 	            label: "Industry Average",

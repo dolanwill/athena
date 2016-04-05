@@ -1,7 +1,7 @@
 .navbar {
 	background-color: #863375;
 }
-.container {
+.container, .subsection {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;

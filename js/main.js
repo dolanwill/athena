@@ -36,10 +36,12 @@ function makePie(data_json) {
 function makeLine(data_json) {
 	var date_labels = [];
 	var rates = [];
+	var industry_avg = [];
 
 	data_json.forEach(function(item, index) {
 		rates.push(item.rejection_rate);
 		date_labels.push(item.month);
+		industry_avg.push(.02)
 	});
 	console.log(rates)
 	console.log(date_labels)
@@ -48,17 +50,17 @@ function makeLine(data_json) {
 	    datasets: [
 			{
 	            label: "Industry Average",
-	            strokeColor: "rgba(220,220,220,1)",
-	            pointColor: "rgba(220,220,220,1)",
+	            strokeColor: "rgba(0,128,0,1)",
+	            pointColor: "rgba(0,128,0,1)",
 	            pointStrokeColor: "#fff",
 	            pointHighlightFill: "#fff",
 	            pointHighlightStroke: "rgba(220,220,220,1)",
-	            data: rates
+	            data: industry_avg
 	        },
 	        {
 	            label: "Insurance Company Rejection Rates",
-	            strokeColor: "rgba(151,187,205,1)",
-	            pointColor: "rgba(151,187,205,1)",
+	            strokeColor: "rgba(205,92,92,1)",
+	            pointColor: "rgba(205,92,92,1)",
 	            pointStrokeColor: "#fff",
 	            pointHighlightFill: "#fff",
 	            pointHighlightStroke: "rgba(151,187,205,1)",
